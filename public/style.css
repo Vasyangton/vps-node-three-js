@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo{
+    width: 6%;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+}
+
+.web-gl{
+    width: 70%;
+}
+
+body{
+    background: rgb(156,148,134);
+    background: radial-gradient(circle, rgba(156,148,134,1) 0%, rgba(77,61,43,1) 47%, rgba(9,8,6,1) 81%);
+}
+
+.organe{
+    position: absolute;
+    left: 30px;
+    bottom: 40px;
+}
+
+button{
+    background-color: transparent;
+    border: none;
+}
+
+.social{
+    display: flex;
+}
+
+/* выпадающие окно  */
+
+.links a{
+    width: 100px;
+}
+.links img{
+    width: -webkit-fill-available;
+}
+/* вызов окна  */
+.soci{
+    width: 100px;
+}
+.soci img{
+    width: -webkit-fill-available;
+}
+/* плей пауза */
+.music{
+    width: 100px;
+}
+.music img{
+    width: -webkit-fill-available;
+}
+
+@media (min-width: 426px) and (max-width: 768px){
+    .logo{
+        width: 8%;
+    }
+    .organe{
+        left: 15px;
+    }
+    .links a{
+        width: 90px;
+    }
+    .soci{
+        width: 90px;
+    }
+    .music{
+        width: 90px;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 490px){
+    .logo{
+        width: 8%;
+    }
+    .organe{
+        left: 15px;
+    }
+    .links a{
+        width: 60px;
+    }
+    .soci{
+        width: 60px;
+    }
+    .music{
+        width: 60px;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 375px){
+    .logo{
+        width: 8%;
+    }
+    .organe{
+        left: 15px;
+        bottom: 7px;
+    }
+    .links a{
+        width: 60px;
+    }
+    .soci{
+        width: 60px;
+    }
+    .music{
+        width: 60px;
+    }
+}

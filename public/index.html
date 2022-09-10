@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WARHAMMER</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <script type="importmap">
+        {
+            "imports":{
+                "three": "./build/three.module.js",
+                "three/examples/loader/GLTFLoader": "./jsm/loaders/GLTFLoader.js",
+                "three/examples/controls/OrbitControls": "./jsm/controls/OrbitControls.js"
+                
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        function Play()
+        {
+            var myVideo = document.getElementById("player");
+            if(myVideo.paused)
+            {
+                myVideo.play();
+                document.getElementById("playing").innerHTML=  '<img src="./img/play.svg" alt="Пуск аудио">';
+            }
+            else
+            {
+               myVideo.pause();
+               document.getElementById("playing").innerHTML= '<img src="./img/pause.svg" alt="Пауза аудио">';
+            }
+            if(document.querySelector('player').playing){
+                document.getElementById("playing").innerHTML=  '<img src="./img/play.svg" alt="Пауза аудио">';
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    <div class="container">
+       <a href="http://vasyangton.site/"><img src="./img/logo.png" alt="Love" class="logo"></a>
+        <div class="organe">
+            <audio id="player"  autoplay>
+                <source src="./music/Inquisition.mp3">
+                <source src="./music/malerys.mp3">
+            </audio>
+            <button class="music" id="playing" type="button" onClick="Play()"><img src="./img/play.svg" alt="Пуск аудио"></button>
+            <div class="social">
+                <a class="soci" href="javascript:void(0)" onclick="showHide('block_id')"><img src="./img/contact.svg" alt="Социальные сети"></a>
+                <div id="block_id" class="links" style="display: none;">
+                    <a href="https://discord.gg/nW5TYfBK47"><img src="./img/discord.svg" alt="Discord"></a>
+                    <a href="https://github.com/Vasyangton"><img src="./img/github.svg" alt="GitHub"></a>
+                    <a href="https://tlgg.ru/vasyangton"><img src="./img/telegram.svg" alt="Telegram"></a>
+                    <a href="https://vk.com/vasyangton.site"><img src="./img/vk.svg" alt="VK"></a>
+                    <a href="https://api.whatsapp.com/send/?phone=79268926331"><img src="./img/whatsapp.svg" alt="WhatsApp"></a>
+                </div>
+            </div>
+            <!-- <button onclick="document.getElementById('player').play()">SOUND | ON</button>
+            <button onclick="document.getElementById('player').pause()">SOUND | OFF</button> -->
+         
+        </div>
+
+        <canvas class="web-gl"></canvas> 
+        
+    </div>
+   
+    <script type="module" src="./client.js"></script>
+    <script type="text/javascript">
+       
+        function showHide(element_id) {
+            //Если элемент с id-шником element_id существует
+            if (document.getElementById(element_id)) { 
+                //Записываем ссылку на элемент в переменную obj
+                var obj = document.getElementById(element_id); 
+                //Если css-свойство display не block, то: 
+                if (obj.style.display != "flex") { 
+                    obj.style.display = "flex"; //Показываем элемент
+                }
+                else obj.style.display = "none"; //Скрываем элемент
+            }
+            //Если элемент с id-шником element_id не найден, то выводим сообщение
+            else alert("Элемент с id: " + element_id + " не найден!"); 
+        }   
+    </script>
+</body>
+</html>
