@@ -52,7 +52,7 @@ const init = ()=>{
     //точечный свет и позиционирование
     const spotLight = new THREE.SpotLight(0xffc7c7, 1);
     spotLight.position.set(0, -3, 15);
-    //помошник
+    //помощник
    // const spotLightHelper = new THREE.SpotLightHelper(spotLight, 1 , 0x00ff00);
 
     scene.add(spotLight);
