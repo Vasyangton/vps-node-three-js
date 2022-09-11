@@ -6,9 +6,20 @@ app.use(express.static(__dirname + '/public'));
 app.use('/build/', express.static(path.join(__dirname,'node_modules/three/build')));
 app.use('/jsm/',express.static(path.join(__dirname,'node_modules/three/examples/jsm')));
 
-app.listen = function(){
-  var server = http.createServer(this);
-  return server.listen.apply(server, arguments);
-};
+
+const portfinder = require('portfinder');
+
+app.get('/', (req, res) => {
+  res.json({ok: 1})
+}) 
+
+async function main() {
+  const port = await portfinder.getPortPromise()
+  app.listen(port, () => {
+    console.log(`listening on port ${port}`)
+  })
+}
+
+main()
 
 
